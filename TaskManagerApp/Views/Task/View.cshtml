@@ -17,6 +17,6 @@
         <input type="text" class="form-control" asp-for="Content">
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" asp-action="Add" asp-controller="Task">Submit</button>
     <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Task">Delete</button>
 </form>

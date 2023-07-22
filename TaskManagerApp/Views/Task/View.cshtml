@@ -1,0 +1,22 @@
+﻿@model TaskManagerApp.Models.UpdateTaskViewModel
+@{
+}
+
+<h1>Edit Task</h1>
+<form method="post" action="View" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label" asp-for="Id">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label" asp-for="Title">Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label" asp-for="Content">Content</label>
+        <input type="text" class="form-control" asp-for="Content">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Task">Delete</button>
+</form>

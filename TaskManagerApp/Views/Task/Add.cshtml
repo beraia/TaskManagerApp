@@ -1,0 +1,18 @@
+﻿@model TaskManagerApp.Models.AddTaskViewModel
+
+@{
+}
+
+<h1>Add Task</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label" asp-for="Title">Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label" asp-for="Content">Content</label>
+        <input type="text" class="form-control" asp-for="Content">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

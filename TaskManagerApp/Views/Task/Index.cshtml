@@ -1,0 +1,23 @@
+﻿@model List<TaskManagerApp.Models.Domain.Task>
+@{
+}
+
+<h1>Tasks</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var task in Model)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td>@task.Content</td>
+            </tr>
+        }
+    </tbody>
+</table>

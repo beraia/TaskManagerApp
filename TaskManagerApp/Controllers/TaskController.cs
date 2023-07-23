@@ -56,10 +56,11 @@ namespace TaskManagerApp.Controllers
                 {
                     Id = task.Id,
                     Title = task.Title,
-                    Content = task.Content
+                    Content = task.Content,
+                    Status = task.Status
                 };
 
-                return await Task.Run(() => View("View", viewModel));
+                return View("View", viewModel);
             }
             return RedirectToAction("Index");
         }
@@ -73,6 +74,7 @@ namespace TaskManagerApp.Controllers
             {
                 task.Title = request.Title;
                 task.Content = request.Content;
+                task.Status = request.Status;
 
                 await _dbContext.SaveChangesAsync();
 

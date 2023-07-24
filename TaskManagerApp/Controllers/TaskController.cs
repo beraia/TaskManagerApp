@@ -17,10 +17,29 @@ namespace TaskManagerApp.Controllers
 
 
         [HttpGet]
-        public async Task <IActionResult> Index()
+        public async Task <IActionResult> Index(int pg=1)
         {
-            var tasks = await _dbContext.Tasks.ToListAsync();
-            return View(tasks);
+            var tasks = _dbContext.Tasks.AsQueryable();
+
+            const int pageSize = 3;
+            if(pg < 1)
+            {
+                pg = 1;
+            }
+
+            int rescCount = tasks.Count();
+
+            var pager = new Pager(rescCount, pg, pageSize);
+
+            int recSkip = (pg - 1) * pageSize;
+
+            var data = tasks.Skip(recSkip).Take(pager.PageSize).ToList();
+
+            this.ViewBag.Pager = pager;
+
+            //return View(tasks);
+
+            return View(data);
         }
 
 

@@ -12,8 +12,8 @@ using TaskManagerApp.Data;
 namespace TaskManagerApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230723095137_update task model")]
-    partial class updatetaskmodel
+    [Migration("20230829094229_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

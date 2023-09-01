@@ -72,7 +72,8 @@ namespace TaskManagerApp.Controllers
         public async Task<IActionResult> Update(UpdateTaskViewModel request)
         {
             var task = await _mediator.Send(new UpdateTaskCommand(request.Id, request.Title, request.Content, (TaskStatus)request.Status));
-            return RedirectToAction("Details");
+            return RedirectToAction("Index");
+
         }
 
         [HttpPost]
